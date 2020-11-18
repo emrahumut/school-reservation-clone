@@ -1,0 +1,79 @@
+{
+  "loading": "Loading",
+  "menu": {
+    "title": "MENU",
+    "home": "Home",
+    "how-to-use": "How To Use",
+    "contact": "Contact",
+    "select-school": "Select School",
+    "select-weeks": "Select Weeks",
+    "selectionOne": "selection",
+    "selectionMore": "selections"
+  },
+  "footer": {
+    "terms-conditions": "Terms and conditions",
+    "privacy": "Privacy",
+    "copyright": "© 2020 MaltaVista",
+    "cookie-consent": "We use cookies to track usage and preferences."
+  },
+  "buttons": {
+    "login": "Login",
+    "registration": "Registration",
+    "I-accept": "I accept",
+    "privacy-policy": "Privacy Policy",
+    "search": "Search",
+    "popular": "Popular",
+    "cheap": "Cheap",
+    "map": "View on map",
+    "more-details": "More Details",
+    "book": "Book Now",
+    "send": "Gönder"
+  },
+  "home": {
+    "title": "Home page",
+    "text": "This is some text in English at home page",
+    "find-book": "FIND & BOOK",
+    "find-book-text": "Find and book language course in Malta !",
+    "select-school": "Select School",
+    "select-weeks": "Select Weeks",
+    "school-count": "30+",
+    "language-school": "Language Schools",
+    "student-count": "1000+",
+    "student-text": "Happy Students",
+    "how-work": "How it Works",
+    "how-work-subtitle": "Cum doctus civibus efficiantur in imperdiet deterruisset.",
+    "how-work-subtitle-link": "contact us",
+    "search-location": "Search Locations",
+    "search-location-text": "An nec placerat repudiare scripserit, temporibus complectitur at sea, vel ignota fierent eloquentiam id.",
+    "location-info": "View Location Info",
+    "location-info-text": "An nec placerat repudiare scripserit, temporibus complectitur at sea, vel ignota fierent eloquentiam id.",
+    "book-call": "Book, Reach or Call",
+    "book-call-text": "An nec placerat repudiare scripserit, temporibus complectitur at sea, vel ignota fierent eloquentiam id.",
+    "selectionOne": "selection",
+    "selectionMore": "selections"
+  },
+  "school": {
+    "filter": "Filter",
+    "school": "School & Duration",
+    "select-school": "Select School",
+    "select-weeks": "Select Weeks"
+  },
+  "not-found": {
+    "title": "Not Found",
+    "text": "Page Not Found"
+  },
+  "bookingForm": {
+    "title": "Booking Form",
+    "nameSurname": "Name Surname",
+    "birthDate": "Date of Birth",
+    "country": "Country",
+    "email": "Email",
+    "mobile": "Mobile Number"
+  },
+  "modal": {
+    "confirmed": "Confirmed",
+    "confirmDescription": "Your reservation request has been successfully sent.",
+    "error": "Error",
+    "errorDescription": "Your reservation request could not be sent. Please try again or contact us."
+  }
+}

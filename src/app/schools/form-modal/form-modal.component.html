@@ -1,0 +1,155 @@
+<!-- Sign In Popup -->
+<div id="sign-in-dialog" class="zoom-anim-dialog" *ngIf="type === 'bookingForm'">
+  <button title="Close (Esc)" type="button" class="mfp-close" (click)="close()"></button>
+  <div class="small-dialog-header">
+    <h3>{{"bookingForm.title" | translate}}</h3>
+  </div>
+
+  <!--TRform -->
+  <form *ngIf="currentLang === 'tr'" class="needs-validation" ngNoForm
+    action="https://submit.jotform.com/submit/200481154725046/" method="post" name="form_200481154725046"
+    id="200481154725046" accept-charset="utf-8">
+    <div class="sign-in-wrapper">
+      <div class="form-group">
+        <label>{{"bookingForm.nameSurname" | translate}}</label>
+        <input type="text" class="form-control" id="input_3" name="q3_adinizSoyadiniz" data-type="input-textbox"
+          value="" data-component="textbox" aria-labelledby="label_3"
+          [ngClass]="{'is-invalid': bookingForm.controls.nameSurname.invalid && (bookingForm.controls.nameSurname.dirty || submit)}">
+        <i class="ti-user"></i>
+      </div>
+      <div class="form-group">
+        <label>{{"bookingForm.birthDate" | translate}}</label>
+        <input type="text" class="form-control" id="input_6" name="q6_dogumTarihiniz" data-type="input-textbox" value=""
+          data-component="textbox" aria-labelledby="label_6"
+          [ngClass]="{'is-invalid': bookingForm.controls.birthDate.invalid && (bookingForm.controls.birthDate.dirty || submit)}">
+        <i class="ti-timer"></i>
+      </div>
+      <div class="form-group">
+        <label>{{"bookingForm.email" | translate}}</label>
+        <input type="text" class="form-control" id="input_5" name="q5_mailAdresiniz" data-type="input-textbox" value=""
+          data-component="textbox" aria-labelledby="label_5"
+          [ngClass]="{'is-invalid': bookingForm.controls.email.invalid && (bookingForm.controls.email.dirty || submit)}">
+        <i class="ti-email"></i>
+      </div>
+      <div class="form-group">
+        <label>{{"bookingForm.mobile" | translate}}</label>
+        <input type="text" class="form-control" id="input_4" name="q4_gsmNumaraniz" data-type="input-textbox" value=""
+          data-component="textbox" aria-labelledby="label_4"
+          [ngClass]="{'is-invalid': bookingForm.controls.mobile.invalid && (bookingForm.controls.mobile.dirty || submit)}">
+        <i class="ti-mobile"></i>
+      </div>
+
+      <input type="hidden" id="input_7" name="q7_okulAdi" data-type="input-textbox" class="form-textbox" size="20"
+        value="{{data?.shortName}}" data-component="textbox" aria-labelledby="label_7" />
+      <input type="hidden" id="input_8" name="q8_hafta" data-type="input-textbox" class="form-textbox" size="20"
+        value="{{data?.weekName}}" data-component="textbox" aria-labelledby="label_8" />
+      <input type="hidden" id="input_9" name="q9_fiyat" data-type="input-textbox" class="form-textbox" size="20"
+        value="{{data?.price}}" data-component="textbox" aria-labelledby="label_9" />
+
+      <div class="text-center"><input type="submit" value="{{'buttons.send' | translate}}" class="btn_1 full-width"
+          (click)="sendForm()"></div>
+    </div>
+  </form>
+  <!--/TRform -->
+
+  <!--ENform -->
+  <form *ngIf="currentLang !== 'tr'" class="needs-validation" ngNoForm
+    action="https://submit.jotform.com/submit/200482040357042/" method="post" name="form_200482040357042"
+    id="200482040357042" accept-charset="utf-8">
+    <div class="sign-in-wrapper">
+      <div class="form-group">
+        <label>{{"bookingForm.nameSurname" | translate}}</label>
+        <input type="text" class="form-control" id="input_3" name="q3_nameSurname" data-type="input-textbox"
+          value="" data-component="textbox" aria-labelledby="label_3"
+          [ngClass]="{'is-invalid': bookingForm.controls.nameSurname.invalid && (bookingForm.controls.nameSurname.dirty || submit)}">
+        <i class="ti-user"></i>
+      </div>
+      <div class="form-group">
+        <label>{{"bookingForm.birthDate" | translate}}</label>
+        <input type="text" class="form-control" id="input_5" name="q5_dateOf" data-type="input-textbox" value=""
+          data-component="textbox" aria-labelledby="label_5"
+          [ngClass]="{'is-invalid': bookingForm.controls.birthDate.invalid && (bookingForm.controls.birthDate.dirty || submit)}">
+        <i class="ti-timer"></i>
+      </div>
+      <div class="form-group">
+        <label>{{"bookingForm.country" | translate}}</label>
+        <input type="text" class="form-control" id="input_4" name="q4_country" data-type="input-textbox" value=""
+          data-component="textbox" aria-labelledby="label_4"
+          [ngClass]="{'is-invalid': bookingForm.controls.country.invalid && (bookingForm.controls.country.dirty || submit)}">
+        <i class="ti-world"></i>
+      </div>
+      <div class="form-group">
+        <label>{{"bookingForm.email" | translate}}</label>
+        <input type="text" class="form-control" id="input_7" name="q7_mailAddress" data-type="input-textbox" value=""
+          data-component="textbox" aria-labelledby="label_7"
+          [ngClass]="{'is-invalid': bookingForm.controls.email.invalid && (bookingForm.controls.email.dirty || submit)}">
+        <i class="ti-email"></i>
+      </div>
+      <div class="form-group">
+        <label>{{"bookingForm.mobile" | translate}}</label>
+        <input type="text" class="form-control" id="input_6" name="q6_gsmNumber" data-type="input-textbox" value=""
+          data-component="textbox" aria-labelledby="label_6"
+          [ngClass]="{'is-invalid': bookingForm.controls.mobile.invalid && (bookingForm.controls.mobile.dirty || submit)}">
+        <i class="ti-mobile"></i>
+      </div>
+
+      <input type="hidden" id="input_8" name="q8_shoolName" data-type="input-textbox" class="form-textbox" size="20"
+        value="{{data?.shortName}}" data-component="textbox" aria-labelledby="label_8" />
+      <input type="hidden" id="input_9" name="q9_week" data-type="input-textbox" class="form-textbox" size="20"
+        value="{{data?.weekName}}" data-component="textbox" aria-labelledby="label_9" />
+      <input type="hidden" id="input_10" name="q10_price" data-type="input-textbox" class="form-textbox" size="20"
+        value="{{data?.price}}" data-component="textbox" aria-labelledby="label_10" />
+
+      <div class="text-center"><input type="submit" value="{{'buttons.send' | translate}}" class="btn_1 full-width"
+          (click)="sendForm()"></div>
+    </div>
+  </form>
+  <!--/ENform -->
+
+</div>
+<!-- /Sign In Popup -->
+
+
+<div class="container bookingConfirm" *ngIf="type ==='bookingConfirm'">
+  <div class="row justify-content-end">
+    <i class="material-icons pr-1 pt-1 pointer" (click)="close()"> close</i>
+  </div>
+  <div class="row justify-content-center">
+    <div class="col">
+      <div id="confirm">
+        <div class="icon icon--order-success svg add_bottom_15">
+          <svg xmlns="http://www.w3.org/2000/svg" width="72" height="72">
+            <g fill="none" stroke="#8EC343" stroke-width="2">
+              <circle cx="36" cy="36" r="35" style="stroke-dasharray:240px, 240px; stroke-dashoffset: 480px;">
+              </circle>
+              <path d="M17.417,37.778l9.93,9.909l25.444-25.393"
+                style="stroke-dasharray:50px, 50px; stroke-dashoffset: 0px;"></path>
+            </g>
+          </svg>
+        </div>
+        <h2>{{"modal.confirmed" | translate}}</h2>
+        <p>{{"modal.confirmDescription" | translate}}</p>
+      </div>
+    </div>
+  </div>
+  <!-- /row -->
+</div>
+
+
+<div class="container bookingError" *ngIf="type ==='bookingError'">
+  <div class="row justify-content-end">
+    <i class="material-icons pr-1 pt-1 pointer" (click)="close()"> close</i>
+  </div>
+  <div class="row justify-content-center">
+    <div class="col">
+      <div id="error">
+        <div class="icon icon--order-success svg add_bottom_15">
+          <i class="icon_close_alt2 error"></i>
+        </div>
+        <h2>{{"modal.error" | translate}}</h2>
+        <p>{{"modal.errorDescription" | translate}}</p>
+      </div>
+    </div>
+  </div>
+  <!-- /row -->
+</div>

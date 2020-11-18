@@ -1,0 +1,17 @@
+::ng-deep .styled-select3 {
+  min-width: 120px;
+}
+
+
+@media only screen and (min-width: 991px) {
+  nav#mobil-menu {
+    display: none !important;
+  }
+}
+
+#mobil-menu {
+  max-width: 70px;
+  position: absolute;
+  margin-top: 8px;
+  margin-right: 74px;
+}

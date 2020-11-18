@@ -1,0 +1,26 @@
+<footer>
+    <div class="container margin_60_35">
+        <div class="row">
+            <div class="col-lg-6">
+                <ul id="footer-selector">
+                    <li><img src="../../../../assets/img/cards_all.svg" alt=""></li>
+                </ul>
+            </div>
+            <div class="col-lg-6">
+                <ul id="additional_links">
+                    <li><a [routerLink]="['/terms-conditions']">{{"footer.terms-conditions" | translate}}</a></li>
+                    <li><a [routerLink]="['/privacy']">{{"footer.privacy" | translate}}</a></li>
+                    <li><span>{{"footer.copyright" | translate}}</span></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</footer>
+<!--/footer-->
+
+
+<div *ngIf="showCookieConsent" id="cookie-bar" class="fixed bottom">
+    <p>{{"footer.cookie-consent" | translate}}
+        <a (click)="acceptCookie();" class="cb-enable">{{"buttons.I-accept" | translate}}</a>
+        <a [routerLink]="['/privacy']" class="cb-policy">{{"buttons.privacy-policy" | translate}}</a></p>
+</div>

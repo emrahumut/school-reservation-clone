@@ -1,0 +1,93 @@
+<main>
+    <section class="hero_single version_4">
+        <div class="wrapper">
+            <div class="container">
+                <h3>{{"home.find-book" | translate}}</h3>
+                <p>{{"home.find-book-text" | translate}}</p>
+                <div class="row no-gutters custom-search-input-2 anasayfa">
+                    <div class="col-lg-5 wide3">
+
+                    </div>
+                    <div class="col-lg-5">
+                        <ng-select class="wide" [loading]="weeks.length <= 0" [items]="weeks" [multiple]="true"
+                            [closeOnSelect]="false" [searchable]="true" bindLabel="weekName"
+                            placeholder="{{'home.select-weeks' | translate}}" [(ngModel)]="selectedWeeks">
+                            <ng-template ng-multi-label-tmp let-items="items" let-clear="clear">
+                                <div class="ng-value" *ngFor="let item of items | slice:0:2">
+                                    <span class="ng-value-icon left" (click)="clear(item)" aria-hidden="true">×</span>
+                                    <span class="ng-value-label">{{item.weekName}}</span>
+                                </div>
+                                <div class="ng-value" *ngIf="items.length > 2">
+                                    <span class="ng-value-label">{{items.length - 2 }}
+                                        {{(items.length > 3 ? "home.selectionMore" : "home.selectionOne") | translate}}...</span>
+                                </div>
+                            </ng-template>
+                            <ng-template ng-loadingspinner-tmp>
+                                <div class="lds-ellipsis">
+                                    <div></div>
+                                    <div></div>
+                                    <div></div>
+                                    <div></div>
+                                </div>
+                            </ng-template>
+                        </ng-select>
+                    </div>
+                    <div class="col-lg-2">
+                        <input type="submit" value="{{'buttons.search' | translate}}" (click)="search()">
+                    </div>
+                </div>
+                <!-- /row -->
+                <ul class="counter">
+                    <li><strong>{{"home.school-count" | translate}}</strong> {{"home.language-school" | translate}}</li>
+                    <li><strong>{{"home.student-count" | translate}}</strong> {{"home.student-text" | translate}}</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    <!-- /hero_single -->
+
+    <div id="nasil" #nasil class="call_section">
+        <div class="wrapper">
+            <div class="container margin_80_55">
+                <div class="main_title_2">
+                    <span><em></em></span>
+                    <h2>{{"home.how-work" | translate}}</h2>
+                    <p>{{"home.how-work-subtitle" | translate}} <a href="https://maltavista.com.tr/iletisim"
+                            target="_blank">{{"home.how-work-subtitle-link" | translate}}</a>
+                    </p>
+                </div>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="box_how">
+                            <i class="pe-7s-search"></i>
+                            <h3>{{"home.search-location" | translate}}</h3>
+                            <p>{{"home.search-location-text" | translate}}</p>
+                            <span></span>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="box_how">
+                            <i class="pe-7s-info"></i>
+                            <h3>{{"home.location-info" | translate}}</h3>
+                            <p>{{"home.location-info-text" | translate}}</p>
+                            <span></span>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="box_how">
+                            <i class="pe-7s-like2"></i>
+                            <h3>{{"home.book-call" | translate}}</h3>
+                            <p>{{"home.book-call-text" | translate}}</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- /row -->
+                <!-- <p class="text-center add_top_30 wow bounceIn" data-wow-delay="0.5"><a href="register.html"
+                        class="btn_1 rounded">Register Now</a></p> -->
+            </div>
+        </div>
+        <!-- /wrapper -->
+    </div>
+    <!--/call_section-->
+</main>
+<!-- /main -->

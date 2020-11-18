@@ -1,0 +1,100 @@
+<header class="header menu_fixed" *ngIf="headerType === 'public'" [ngClass]="{'sticky' : isSticky}">
+    <div id="logo">
+        <a [routerLink]="['/home']" title="MaltaVista Booking Platform">
+            <img src="../../../../assets/img/maltavista1.png" height="35" alt="MaltaVista Booking Platform"
+                class="logo_normal">
+            <img src="../../../../assets/img/maltavista.png" height="35" alt="MaltaVista Booking Platform"
+                class="logo_sticky">
+        </a>
+    </div>
+    <a class="btn_mobile" (click)="sideNavOpen(sidenavMenu)">
+        <div class="hamburger hamburger--spin" id="hamburger">
+            <div class="hamburger-box">
+                <div class="hamburger-inner"></div>
+            </div>
+        </div>
+    </a>
+    <nav id="menu" class="main-menu">
+        <ul>
+            <li><span><a [routerLink]="['/home']">{{"menu.home" | translate}}</a></span></li>
+            <li><span><a [routerLink]="['/home']" [fragment]="'nasil'">{{"menu.how-to-use" | translate}}</a></span></li>
+            <li><span><a href="https://maltavista.com.tr/iletisim"
+                        target="_blank">{{"menu.contact" | translate}}</a></span></li>
+            <li>
+                <div class="styled-select3" id="lang-selector">
+                    <select (change)="changeLang($event.target.value)">
+                        <option *ngFor="let lang of langList$ | async" [value]="lang.code"
+                            [selected]="lang.code === currentLang">
+                            {{ lang.name }} {{lang.name === 'English' ? ' (Global)' : ''}}
+                        </option>
+                    </select>
+                </div>
+            </li>
+        </ul>
+    </nav>
+    <nav id="mobil-menu" class="main-menu">
+        <ul>
+            <li>
+                <div class="styled-select3" id="lang-selector">
+                    <select (change)="changeLang($event.target.value)">
+                        <option *ngFor="let lang of langList$ | async" [value]="lang.code"
+                            [selected]="lang.code === currentLang">
+                            {{ lang.name }} {{lang.name === 'English' ? ' (Global)' : ''}}
+                        </option>
+                    </select>
+                </div>
+            </li>
+        </ul>
+    </nav>
+</header>
+<!-- /header -->
+
+
+<header class="header_in" *ngIf="headerType === 'schools'">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3 col-12">
+                <div id="logo">
+                    <a [routerLink]="['/home']">
+                        <img src="../../../../assets/img/maltavista.png" height="35" alt="MaltaVista Booking Platform"
+                            class="logo_sticky">
+                    </a>
+                </div>
+            </div>
+            <div class="col-lg-9 col-12">
+                <ul id="top_menu">
+                    <li>
+                        <div class="styled-select2" id="lang-selector">
+                            <select (change)="changeLang($event.target.value)">
+                                <option *ngFor="let lang of langList$ | async" [value]="lang.code"
+                                    [selected]="lang.code === currentLang">
+                                    {{ lang.name }} {{lang.name === 'English' ? ' (Global)' : ''}}
+                                </option>
+                            </select>
+                        </div>
+                    </li>
+                </ul>
+                <!-- /top_menu -->
+                <a class="btn_mobile" (click)="sideNavOpen(sidenavMenu)">
+                    <div class="hamburger hamburger--spin" id="hamburger">
+                        <div class="hamburger-box">
+                            <div class="hamburger-inner"></div>
+                        </div>
+                    </div>
+                </a>
+                <nav id="menu" class="main-menu">
+                    <ul>
+                        <li><span><a [routerLink]="['/home']">{{"menu.home" | translate}}</a></span></li>
+                        <li><span><a [routerLink]="['/home']"
+                                    [fragment]="'nasil'">{{"menu.how-to-use" | translate}}</a></span></li>
+                        <li><span><a href="https://maltavista.com.tr/iletisim"
+                                    target="_blank">{{"menu.contact" | translate}}</a></span></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+        <!-- /row -->
+    </div>
+    <!-- /container -->
+</header>
+<!-- /header -->

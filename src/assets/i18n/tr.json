@@ -1,0 +1,79 @@
+{
+  "loading": "Yükleniyor",
+  "menu": {
+    "title": "MENU",
+    "home": "Anasayfa",
+    "how-to-use": "Nasıl Kullanılır",
+    "contact": "İletişim",
+    "select-school": "Okul Seçiniz",
+    "select-weeks": "Hafta Sayısı Seçiniz",
+    "selectionOne": "Seçim",
+    "selectionMore": "Seçim"
+  },
+  "footer": {
+    "terms-conditions": "Kullanım Şartları",
+    "privacy": "Gizlilik",
+    "copyright": "© 2020 MaltaVista",
+    "cookie-consent": "Lütfen Çerez Kullanım Politikasını Onaylayınız."
+  },
+  "buttons": {
+    "login": "Giriş Yap",
+    "registration": "Kayıt Ol",
+    "I-accept": "Kabul Ediyorum",
+    "privacy-policy": "Gizlilik Şartları",
+    "search": "Ara",
+    "popular": "Popülarite",
+    "cheap": "Fiyat",
+    "map": "Haritada Gör",
+    "more-details": "Detaylı Bilgi",
+    "book": "Kayıt Ol",
+    "send": "Gönder"
+  },
+  "home": {
+    "title": "Anasayfa",
+    "text": "Anasayfada bir yazı, ancak nerede olduğunu göremedim?",
+    "find-book": "FIND & BOOK",
+    "find-book-text": "Find and book language course in Malta !",
+    "select-school": "Okul Seçiniz",
+    "select-weeks": "Hafta Sayısı Seçiniz",
+    "school-count": "30+",
+    "language-school": "Dil Okulu",
+    "student-count": "1000+",
+    "student-text": "Referans Öğrenci",
+    "how-work": "Nasl Kullanılır",
+    "how-work-subtitle": "Daha detaylı bilgi için lütfen",
+    "how-work-subtitle-link": "bize ulaşın.",
+    "search-location": "Okul ve Hafta Seçimi",
+    "search-location-text": "Detaylı bilgi talep ettiğiniz okulları ve eğitim planı yaptığınız hafta sayısını seçin.",
+    "location-info": "Detaylı İnceleme",
+    "location-info-text": "Okulların güncel fiyatları, kampanyaları, haritadaki konumları ve diğer önemli detaylarını inceleyin.",
+    "book-call": "Online Kayıt",
+    "book-call-text": "Karar verdiğiniz okul için kayıt butonuna tıklayın, mail adresinize gelen direktifleri takip edin.",
+    "selectionOne": "Seçim",
+    "selectionMore": "Seçim"
+  },
+  "school": {
+    "filter": "",
+    "school": "Okul ve Hafta Sayısı Seçiniz",
+    "select-school": "Okul Seçiniz",
+    "select-weeks": "Hafta Sayısı Seçiniz"
+  },
+  "not-found": {
+    "title": "Aramanıza Uygun Sonuç Bulunamadı",
+    "text": "Aradığınız Sayfa Bulunamadı"
+  },
+  "bookingForm": {
+    "title": "Rezervasyon Formu",
+    "nameSurname": "Ad Soyad",
+    "birthDate": "Doğum Tarihi",
+    "country": "Ülke",
+    "email": "Email",
+    "mobile": "Tel No"
+  },
+  "modal": {
+    "confirmed": "Onay",
+    "confirmDescription": "Rezervasyon isteğiniz başarılı bir şekilde gönderilmiştir.",
+    "error": "Hata",
+    "errorDescription": "Rezervasyon isteğiniz gönderilemedi. Lütfen tekrar deneyiniz veya bizimle iletişime geçiniz."
+  }
+}

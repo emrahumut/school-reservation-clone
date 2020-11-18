@@ -1,0 +1,150 @@
+<main>
+    <div id="results">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 col-md-6 col-10">
+                    <h4 class="sag">{{"school.filter" | translate}} <strong>{{"school.school" | translate}}</strong> <i
+                            class="icon-right-open"></i></h4>
+                </div>
+                <div class="col-lg-6 col-md-6 col-2">
+                    <a class="side_panel btn_search_mobile" (click)="toggleRightSidenav();"></a>
+                    <!-- /open search panel -->
+                    <div class="row no-gutters custom-search-input-2 inner">
+                        <div class="col-lg-6 wide2">
+                            <ng-select class="wide" [loading]="schools.length <= 0" [items]="schools" [multiple]="true"
+                                [closeOnSelect]="false" [searchable]="true" bindLabel="name"
+                                placeholder="{{'school.select-school' | translate}}" [(ngModel)]="selectedSchools">
+                                <ng-template ng-multi-label-tmp let-items="items" let-clear="clear">
+                                    <div class="ng-value" *ngIf="items.length > 0">
+                                        <span class="ng-value-label">{{items.length}}
+                                            {{(items.length > 1 ? "menu.selectionMore" : "menu.selectionOne") | translate}}...</span>
+                                    </div>
+                                </ng-template>
+                                <ng-template ng-loadingspinner-tmp>
+                                    <div class="lds-ellipsis">
+                                        <div></div>
+                                        <div></div>
+                                        <div></div>
+                                        <div></div>
+                                    </div>
+                                </ng-template>
+                            </ng-select>
+                        </div>
+                        <div class="col-lg-5">
+                            <ng-select class="wide" [loading]="weeks.length <= 0" [items]="weeks" [multiple]="true"
+                                [closeOnSelect]="false" [searchable]="true" bindLabel="weekName"
+                                placeholder="{{'school.select-weeks' | translate}}" [(ngModel)]="selectedWeeks">
+                                <ng-template ng-multi-label-tmp let-items="items" let-clear="clear">
+                                    <div class="ng-value" *ngIf="items.length > 0">
+                                        <span class="ng-value-label">{{items.length}}
+                                            {{(items.length > 1 ? "menu.selectionMore" : "menu.selectionOne") | translate}}...</span>
+                                    </div>
+                                </ng-template>
+                                <ng-template ng-loadingspinner-tmp>
+                                    <div class="lds-ellipsis">
+                                        <div></div>
+                                        <div></div>
+                                        <div></div>
+                                        <div></div>
+                                    </div>
+                                </ng-template>
+                            </ng-select>
+                        </div>
+                        <div class="col-lg-1">
+                            <input type="submit" value="{{'buttons.search' | translate}}" (click)='search()'>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- /row -->
+        </div>
+        <!-- /container -->
+    </div>
+
+    <!-- /results -->
+    <div class="filters_listing sticky_horizontal">
+        <div class="container">
+            <ul class="clearfix">
+                <li>
+                    <div class="switch-field">
+                        <input type="radio" id="popular" name="listing_filter" value="popular"
+                            [checked]="sortCheck === 'popularSort'" (click)="popularSort()">
+                        <label for="popular">{{"buttons.popular" | translate}}</label>
+                        <input type="radio" id="cheap" name="listing_filter" value="cheap"
+                            [checked]="sortCheck === 'priceSort'" (click)="priceSort()">
+                        <label for="cheap">{{"buttons.cheap" | translate}}</label>
+                    </div>
+                </li>
+                <li>
+                    <a (click)="openMap = !openMap"
+                        class="btn_map">{{openMap ? 'Hide Map' : "buttons.map" | translate}}</a>
+                </li>
+            </ul>
+        </div>
+        <!-- /container -->
+    </div>
+    <!-- /filters -->
+    <div class="mapContainer">
+        <app-map *ngIf="openMap" [schoolsData]="schoolsData"></app-map>
+    </div>
+    <!-- /Map -->
+
+    <div class="container margin_60_35">
+
+        <div class="row">
+            <!-- /okul alanı 1 -->
+            <div class="col-xl-4 col-lg-6 col-md-6" *ngFor="let item of schoolsData; let indis=index">
+                <div class="strip grid">
+                    <figure>
+                        <img [src]="item?.school?.photo?.url" class="img-fluid" alt="Clubclass">
+                    </figure>
+                    <div class="wrapper">
+                        <h3>{{item?.school?.name}}</h3>
+                        <small><i class="icon-hourglass-1"></i>
+                            {{item?.school?.foundYear}}&nbsp;&nbsp;&nbsp;<i
+                                class="icon-male"></i>{{item?.school?.capacity}}
+                                &nbsp;&nbsp;&nbsp;<a [href]="item?.school?.detailsLink"
+                                target="_blank"><i class="icon-info-circled"></i>
+                                {{"buttons.more-details" | translate}}</a></small>
+
+                        <div class="accordion_2" id="okul{{indis}}">
+                            <!-- /accordion içerik 1 -->
+                            <div class="card" *ngFor="let description of item?.week?.descriptions; let i=index">
+                                <div class="card-header"
+                                    [ngClass]="item.week.descriptions.length !== (i+1) ? 'detay' : ''" role="tab">
+                                    <h5 class="mb-0">
+                                        <a data-toggle="collapse" href="#collapse{{indis}}_{{i}}" aria-expanded="true">
+                                            <i class="icon-angle-right"></i>{{description.title}}
+                                        </a>
+                                    </h5>
+                                </div>
+
+                                <div id="collapse{{indis}}_{{i}}" class="collapse" role="tabpanel" [attr.data-parent]="'#okul' + indis">
+                                    <div class="card-body">
+                                        <p>{{description.description}}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <ul>
+                        <li><a class="pointer" (click)="openForm(item);"><span
+                                    class="loc_open">{{"buttons.book" | translate}}</span></a>
+                        </li>
+                        <li>
+                            <div [ngClass]="item?.week?.price !== item?.week?.discountedPrice ? 'score' : 'score2'">
+                                <span>{{item?.week?.weekName}}<em>
+                                        {{item?.week?.price !== item?.week?.discountedPrice ? item?.week?.price + ' €' : ''}}</em></span><strong>
+                                    {{item?.week?.discountedPrice}} €</strong></div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- /row -->
+
+    </div>
+    <!-- /container -->
+
+</main>
+<!--/main-->

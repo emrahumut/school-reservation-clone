@@ -1,0 +1,27 @@
+<div class="sub_header_in">
+  <div class="container">
+  </div>
+  <!-- /container -->
+</div>
+<!-- /sub_header -->
+
+<main>
+
+
+  <div class="bg_color_1">
+    <div class="container margin_80_55">
+
+      <div class="row justify-content-between pr-3 pl-3">
+        <div class="main_title_2">
+          <h2 *ngIf="result">{{result?.title}}</h2>
+        </div>
+        <div *ngIf="result" [innerText]="result?.content"></div>
+      </div>
+      <!--/row-->
+    </div>
+    <!--/container-->
+  </div>
+  <!--/bg_color_1-->
+
+</main>
+<!--/main-->

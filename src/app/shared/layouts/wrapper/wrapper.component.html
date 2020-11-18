@@ -1,0 +1,103 @@
+<mat-sidenav-container class="mainContainer">
+    <mat-sidenav mode="over" #leftSidenav class="leftSidenav" position="start" fixedInViewport="true"
+        hasBackdrop="true">
+        <div class="row navbar-header text-center">
+            <div class="col-10">
+                {{"menu.title" | translate}}
+            </div>
+            <div class="col-2 cancel">
+                <mat-icon aria-hidden="false" aria-label="Example home icon" class="pointer"
+                    (click)="$event.stopPropagation(); leftSidenav.close();">clear</mat-icon>
+            </div>
+        </div>
+        <ul class="list-group list-group-flush pointer">
+            <li class="list-group-item left-sidenav-item" [routerLink]="['/']"
+                (click)="$event.stopPropagation(); leftSidenav.close();">
+                {{"menu.home" | translate}}
+            </li>
+            <li class="list-group-item left-sidenav-item" [routerLink]="['/']" [fragment]="'nasil'"
+                (click)="$event.stopPropagation(); leftSidenav.close();">
+                {{"menu.how-to-use" | translate}}
+            </li>
+            <li class="list-group-item left-sidenav-item"
+                (click)="$event.stopPropagation(); leftSidenav.close(); gotoContact();">
+                {{"menu.contact" | translate}}
+            </li>
+        </ul>
+        <div class="row navbar-footer fixed-bottom">
+            <div class="col-12 pt-2 footer-info">
+                {{"footer.copyright" | translate}}
+            </div>
+        </div>
+    </mat-sidenav>
+    <mat-sidenav mode="over" #rightSidenav class="rightSidenav" position="end" fixedInViewport="true" hasBackdrop="true"
+        (openedStart)="sidenavOpen()">
+        <div class="container p-2 pl-5">
+            <div class="row pb-3">
+                <div class="col-12 d-flex justify-content-end">
+                    <mat-icon aria-hidden="false" aria-label="Example home icon" class="cancel"
+                        (click)="$event.stopPropagation(); rightSidenav.close();">clear</mat-icon>
+                </div>
+            </div>
+            <div class="row search-row">
+                <div class="col-12 d-flex justify-content-center mb-2">
+                    <ng-select class="mobil-select" [loading]="schools.length <= 0" [items]="schools" [multiple]="true"
+                        [closeOnSelect]="true" [searchable]="true" bindLabel="name"
+                        placeholder="{{'school.select-school' | translate}}" [(ngModel)]="selectedSchools">
+                        <ng-template ng-multi-label-tmp let-items="items" let-clear="clear">
+                            <div class="ng-value" *ngIf="items.length > 0">
+                                <span class="ng-value-label">{{items.length}}
+                                    {{(items.length > 1 ? "menu.selectionMore" : "menu.selectionOne") | translate}}...</span>
+                            </div>
+                        </ng-template>
+                        <ng-template ng-loadingspinner-tmp>
+                            <div class="lds-ellipsis">
+                                <div></div>
+                                <div></div>
+                                <div></div>
+                                <div></div>
+                            </div>
+                        </ng-template>
+                    </ng-select>
+                </div>
+                <div class="col-12 d-flex justify-content-center">
+                    <ng-select class="mobil-select" [loading]="weeks.length <= 0" [items]="weeks" [multiple]="true"
+                        [closeOnSelect]="true" [searchable]="true" bindLabel="weekName"
+                        placeholder="{{'school.select-weeks' | translate}}" [(ngModel)]="selectedWeek">
+                        <ng-template ng-multi-label-tmp let-items="items" let-clear="clear">
+                            <div class="ng-value" *ngFor="let item of items | slice:0:2">
+                                <span class="ng-value-icon left" (click)="clear(item)" aria-hidden="true">×</span>
+                                <span class="ng-value-label">{{item.weekName}}</span>
+                            </div>
+                            <div class="ng-value" *ngIf="items.length > 2">
+                                <span class="ng-value-label">{{items.length - 2 }}
+                                    {{(items.length > 3 ? "home.selectionMore" : "home.selectionOne") | translate}}...</span>
+                            </div>
+                        </ng-template>
+                        <ng-template ng-loadingspinner-tmp>
+                            <div class="lds-ellipsis">
+                                <div></div>
+                                <div></div>
+                                <div></div>
+                                <div></div>
+                            </div>
+                        </ng-template>
+                    </ng-select>
+                </div>
+                <div class="col-12 d-flex justify-content-center custom-search-input-2">
+                    <input type="submit" value="{{'buttons.search' | translate}}" (click)="sidenavSearch()">
+                </div>
+            </div>
+        </div>
+    </mat-sidenav>
+    <mat-sidenav-content>
+        <app-toolbar [sidenavMenu]="leftSidenav"></app-toolbar>
+        <div id="wrapper-content" class="p-t-9 d-f f-d">
+            <!-- <app-sidebar></app-sidebar> -->
+            <main role="main" class="f-a">
+                <router-outlet></router-outlet>
+            </main>
+        </div>
+        <app-footer></app-footer>
+    </mat-sidenav-content>
+</mat-sidenav-container>
